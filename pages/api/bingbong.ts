@@ -5,6 +5,6 @@ export default function handler(
   response: NextApiResponse
 ) {
   response.status(200).json({
-    msg: 'bing bong',
+    msg: 'bing bong!',
   })
 }
