@@ -1,1 +1,3 @@
-export default () => <div>mferbuilderDAO API</div>
+const Home = () => <div>mferbuilderDAO API</div>
+
+export default Home
