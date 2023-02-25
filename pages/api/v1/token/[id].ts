@@ -41,7 +41,7 @@ export default async function handler(
     const token: Token = JSON.parse(ethers.utils.toUtf8String(bytes))
 
     // return data
-    return response.status(200).json({ data: token })
+    return response.status(200).json({ ...token })
   } catch (error) {
     console.error(error)
     return response.status(500).end()

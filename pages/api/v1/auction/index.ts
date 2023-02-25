@@ -25,7 +25,7 @@ export default async function handler(
     const result = await auctionContract.auction()
 
     // parse results
-    const data: Auction = {
+    const auction: Auction = {
       tokenId: result[0].toString(),
       highestBid: result[1],
       highestBidder: result[2],
@@ -35,7 +35,7 @@ export default async function handler(
     }
 
     // return result
-    response.status(200).json({ data })
+    response.status(200).json({ ...auction })
   } catch (error) {
     console.error(error)
     response.status(500)
