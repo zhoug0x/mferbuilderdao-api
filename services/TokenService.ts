@@ -1,6 +1,8 @@
 import { Contract, ethers } from 'ethers'
 import { MferBuilderDAO } from 'mferbuilderdao-sdk'
 
+const { NODE_URL } = process.env
+
 export interface TokenProperties {
   bg: string
   head: string
@@ -19,7 +21,7 @@ export class TokenService {
   private contract: Contract
 
   constructor() {
-    const provider = ethers.getDefaultProvider('mainnet')
+    const provider = new ethers.providers.JsonRpcProvider(NODE_URL, 'mainnet')
     const sdk = MferBuilderDAO.connect({ signerOrProvider: provider })
     this.contract = sdk.token()
   }

@@ -1,6 +1,8 @@
 import { ethers, BigNumber, Contract } from 'ethers'
 import { MferBuilderDAO } from 'mferbuilderdao-sdk'
 
+const { NODE_URL } = process.env
+
 export interface Auction {
   tokenId: string
   highestBid: BigNumber
@@ -14,7 +16,7 @@ export class AuctionService {
   private contract: Contract
 
   constructor() {
-    const provider = ethers.getDefaultProvider('mainnet')
+    const provider = new ethers.providers.JsonRpcProvider(NODE_URL, 'mainnet')
     const sdk = MferBuilderDAO.connect({ signerOrProvider: provider })
     this.contract = sdk.auction()
   }

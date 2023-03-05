@@ -25,9 +25,17 @@ serverless web API w/ TypeScript & Next.js
 
 - [] nested objects for MFBLR tokens, votes, proposals (less calls for the client to get different types of data)
 
-## to run locally
+## run locally
 
-install deps:
+> note - you will need a node url, you can get one from [Alchemy](https://www.alchemy.com) or [Infura](https://www.infura.io) for free
+
+make a copy of the `env.example` named `env.local` and add your mainnet node url
+
+```
+NODE_URL=your_node_url_here
+```
+
+install packages:
 
 ```bash
 yarn
